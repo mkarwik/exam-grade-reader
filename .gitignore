@@ -1,0 +1,9 @@
+# Exam photos, rosters and results contain students' personal data. Never commit them.
+*.jpg
+*.jpeg
+*.png
+*.json
+!tests/**/*.json
+.env
+__pycache__/
+.ipynb_checkpoints/
