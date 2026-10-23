@@ -13,9 +13,9 @@ I surveyed 30 lecturers and 80+ students. Lecturers spend **20–30 minutes per 
 1. Takes photos or scans of graded exam pages.
 2. Sends each page to the Gemini API in two steps: first it finds the student's name and index number, then, on title pages, it reads the points the lecturer wrote down (often circled, sometimes overlapping the circle).
 3. Matches what it read to the course roster. Handwritten index numbers are often off by a digit, so matching goes from exact index, to a close index plus the most similar name, to name only.
-4. Shows each page next to the extracted data for a quick manual check (in the notebook).
+4. Shows each page next to the extracted data, so the lecturer reviews and confirms grades instead of typing them in (in the notebook).
 
-**Result:** on 100+ real exams, 99% of grades were read correctly. The misreads were grades that I could not read either.
+The model only reads the handwriting. Everything around it is part of this project: the two-step reading flow, validating what comes back (points must fall in the allowed range), correcting misread index numbers against the roster, the review step and the retry logic for API rate limits. It has been tested on more than 100 real exam papers.
 
 **Next:** sending each student a scan of their own exam and uploading grades to the university's student records system.
 
@@ -43,6 +43,6 @@ Exam photos, rosters and results contain students' personal data. None of it is 
 
 ## Status
 
-Working prototype, now being tested on real exams. The biggest problem so far is hardware: pages jamming in the document scanner.
+Working prototype, now being tested on real exams.
 
 Author: [Maciej Karwik](https://github.com/mkarwik)
